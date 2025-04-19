@@ -1,5 +1,9 @@
 package hw4.player;
 
-public class Movement {
+public enum Movement {
+	UP, 
+	RIGHT, 
+	DOWN, 
+	LEFT
 
 }
