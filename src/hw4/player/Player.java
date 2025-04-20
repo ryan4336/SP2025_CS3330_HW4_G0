@@ -4,10 +4,10 @@ import hw4.maze.Cell;
 import hw4.maze.Row;
 
 public class Player {
-	
+
 	Cell currentCell;
 	Row currentRow;
-	
+
 	public Player(Row row, Cell cell) {
 		this.currentRow = row;
 		this.currentCell = cell;
@@ -25,7 +25,13 @@ public class Player {
 	public String toString() {
 		return "Player [currentCell=" + currentCell + ", currentRow=" + currentRow + "]";
 	}
-	
-	
-	
+
+	public void setCurrentCell(Cell currentCell) {
+		this.currentCell = currentCell;
+	}
+
+	public void setCurrentRow(Row currentRow) {
+		this.currentRow = currentRow;
+	}
+
 }
