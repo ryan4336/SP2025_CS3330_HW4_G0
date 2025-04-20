@@ -16,7 +16,7 @@ public class Row {
 	public void setCells(ArrayList<Cell> cells) {
 		this.cells = cells;
 	}
-	
+
 	public Cell getCell(int i) {
 		return cells.get(i);
 	}
@@ -25,9 +25,5 @@ public class Row {
 	public String toString() {
 		return "Row [cells=" + cells + "]";
 	}
-	
-	
-	
-}
 
-	
+}
