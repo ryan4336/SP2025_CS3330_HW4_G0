@@ -16,11 +16,13 @@ public class Grid {
 	public void setRows(ArrayList<Row> rows) {
 		this.rows = rows;
 	}
-
+	
+	public int getSize() {
+		return rows.size();
+	}
 	@Override
 	public String toString() {
 		return "Grid [rows=" + rows + "]";
 	}
-	
-	
+
 }
