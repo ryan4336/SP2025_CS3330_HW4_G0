@@ -5,9 +5,18 @@ import hw4.maze.Cell;
 import hw4.maze.Grid;
 import hw4.maze.Row;
 import hw4.player.Player;
-
+/**
+ * The Main class initializes the game, sets up the player at the starting position,
+ * prints the initial game grid, and starts listening for player input.
+ */
 public class Main {
-
+	/**
+     * The entry point of the application. Creates a game instance with a randomly
+     * generated grid, places the player at the bottom-right cell, prints the grid,
+     * and begins listening for movement commands via ScannerInputHandler.
+     *
+     * @param args command line arguments (not used)
+     */
 	public static void main(String[] args) {
 		Game game = new Game(0);
 		Grid grid = game.getGrid();
