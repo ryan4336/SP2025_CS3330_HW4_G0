@@ -1,14 +1,13 @@
 package hw4.game;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import hw4.maze.*;
 import hw4.player.*;
 
 public class Game {
-	Grid grid;
+	private Grid grid;
 
 	public Game(Grid grid) {
 		this.grid = grid;

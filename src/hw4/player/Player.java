@@ -5,8 +5,8 @@ import hw4.maze.Row;
 
 public class Player {
 
-	Cell currentCell;
-	Row currentRow;
+	private Cell currentCell;
+	private Row currentRow;
 
 	public Player(Row row, Cell cell) {
 		this.currentRow = row;

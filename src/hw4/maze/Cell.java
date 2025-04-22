@@ -3,10 +3,10 @@ package hw4.maze;
 
 
 public class Cell {
-	CellComponents left;
-	CellComponents right;
-	CellComponents up;
-	CellComponents down;
+	private CellComponents left;
+	private CellComponents right;
+	private CellComponents up;
+	private CellComponents down;
 
 	public Cell(CellComponents left, CellComponents right, CellComponents up, CellComponents down) {
 		this.left = left;
