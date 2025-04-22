@@ -5,31 +5,62 @@ import java.util.Random;
 
 import hw4.maze.*;
 import hw4.player.*;
-
+/**
+ * The Game class represents a maze-based game containing a grid of cells.
+ * A player can move within the grid, and the goal is to reach an exit cell.
+ */
 public class Game {
 	private Grid grid;
-
+	/**
+	 * Constructs a Game using an existing Grid.
+	 * 
+	 * @param grid the Grid to use in this game
+	 */
 	public Game(Grid grid) {
 		this.grid = grid;
 	}
-
+	/**
+	 * Constructs a Game by generating a random Grid of the specified size.
+	 * 
+	 * @param i the desired size of the grid
+	 */
 	public Game(int i) {
 		grid = createRandomGrid(i);
 	}
-
+	/**
+	 * Returns the current Grid of the game.
+	 * 
+	 * @return the Grid
+	 */
 	public Grid getGrid() {
 		return grid;
 	}
-
+	/**
+	 * Sets a new Grid for the game.
+	 * 
+	 * @param grid the new Grid
+	 */
 	public void setGrid(Grid grid) {
 		this.grid = grid;
 	}
-
+	/**
+	 * Returns a string representation of the Game.
+	 * 
+	 * @return a string describing the grid
+	 */
 	@Override
 	public String toString() {
 		return "Game [grid=" + grid + "]";
 	}
-
+	/**
+	 * Attempts to move the player in a specified direction.
+	 * Checks for walls and boundaries. Returns true if the move is valid,
+	 * and false otherwise. If the player reaches the exit, returns true.
+	 * 
+	 * @param direction the direction to move
+	 * @param player the player to move
+	 * @return true if the player moves or reaches the exit; false if move is invalid
+	 */
 	public boolean play(Movement direction, Player player) {
 		if(direction == null || player == null) {
 			return false;
@@ -88,7 +119,13 @@ public class Game {
 		
 		return true;
 	}
-
+	/**
+	 * Generates a random Grid with walls and apertures. Also places a random exit
+	 * on the left edge of the grid and carves a guaranteed path to it.
+	 * 
+	 * @param gridSize the desired size of the grid (between 3 and 7); if 0, a random size is used
+	 * @return a randomly generated Grid, or null if size is out of bounds
+	 */
 	public Grid createRandomGrid(int gridSize) {
 		if (gridSize == 0) {
 			Random rand = new Random();
@@ -166,7 +203,11 @@ public class Game {
 
 		return grid;
 	}
-
+	/**
+	 * Randomly returns either a WALL or an APERTURE.
+	 * 
+	 * @return a random CellComponents enum value (WALL or APERTURE)
+	 */
 	private static CellComponents randomWallOrAperture() {
 		Random rand = new Random();
 		int index = rand.nextInt(2);
@@ -179,7 +220,13 @@ public class Game {
 			return CellComponents.APERTURE;
 		}
 	}
-	
+	/**
+	 * Prints the grid to the console.
+	 * 'A' represents the player, 'E' the exit, and 'S' a standard cell.
+	 * 
+	 * @param grid the Grid to print
+	 * @param player the Player's current position in the grid
+	 */
 	public void printGrid(Grid grid, Player player) {
 	    for (int rowIdx = 0; rowIdx < grid.getRows().size(); rowIdx++) {
 	        Row row = grid.getRows().get(rowIdx);
